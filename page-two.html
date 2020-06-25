@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script>
+			(function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+    v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+        o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+        y=e.createElement(n);y.async=!0;y.src='https://pendo-dev-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+
+        // Call this whenever information about your visitors becomes available
+        // Please use Strings, Numbers, or Bools for value types.
+        pendo.initialize({
+            visitor: {
+                id:              'Wiley Coyote'   // Required if user is logged in
+                // email:        // Recommended if using Pendo Feedback, or NPS Email
+                // full_name:    // Recommended if using Pendo Feedback
+                // role:         // Optional
+
+                // You can add any additional visitor level key-values here,
+                // as long as it's not one of the above reserved names.
+            },
+
+            account: {
+                id:           'warner bros' // Highly recommended
+                // name:         // Optional
+                // is_paying:    // Recommended if using Pendo Feedback
+                // monthly_value:// Recommended if using Pendo Feedback
+                // planLevel:    // Optional
+                // planPrice:    // Optional
+                // creationDate: // Optional
+
+                // You can add any additional account level key-values here,
+                // as long as it's not one of the above reserved names.
+            }
+        });
+})('035961fd-bb56-46b8-5220-fe2c95029d70');
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-light bg-light">
+                <a href="page-one.html">Go to page 1</a>
+        </nav>
+        <div class="container">
+			<button id="one-click-button" type="button" class="btn btn-info">1 click button 1</button>
+			<button id="one-click-button-two" type="button" class="btn btn-info">1 click button 2</button>
+            <button id="hundred-clicks-button" type="button" class="btn btn-info">100 clicks button 1</button>
+        </div>
+        <div class="container">
+            <h2>This is page 2</h2>
+            <div class="row">
+              <div class="main-content col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="page-header">
+                  <h1>About Testing</h1>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="https://image.shutterstock.com/image-photo/furious-businessman-throws-punch-into-260nw-139655147.jpg" alt="Some pic" class="img-thumbnail">
+                  </div>
+                  <div class="col-md-7">           
+                      <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters. Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.</p>
+                  </div>
+                </div>
+              </div>
+	</body>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		const buttonOne = document.getElementById("one-click-button");
+
+		document.getElementById("hundred-clicks-button").onclick = () => {
+			for (let index = 0; index < 100; index++) {
+				buttonOne.click();
+			}
+		};
+		document.getElementById("one-click-button").onclick = () => {
+				console.log("clicking single button 1");
+		};
+		document.getElementById("one-click-button-two").onclick = () => {
+				console.log("clicking single button 2");
+		};
+	</script>
+</html>
